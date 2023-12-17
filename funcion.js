@@ -1,9 +1,112 @@
-let nombre = ""
-nombre = prompt("Cuál es tu nombre?")
-alert("Bienvenido " + nombre)
+//let nombre = ""
+//nombre = prompt("Cuál es tu nombre?")
+//alert("Bienvenido " + nombre)
 
+let ataqueJugador;
+let ataqueEnemigo;
+
+function iniciarJuego(){
+    let boton_seleccionar_mascota = document.getElementById("boton-mascota");
+    boton_seleccionar_mascota.addEventListener("click",seleccionarMascotaJugador);
+    
+    let botonFuego = document.getElementById("boton-fuego");
+    botonFuego.addEventListener("click",ataquefuego);
+
+    let botonAgua = document.getElementById("boton-agua");
+    botonAgua.addEventListener("click",ataqueagua);
+
+    let botonTierra = document.getElementById("boton-tierra");
+    botonTierra.addEventListener("click", ataquetierra);
+    
+}
+
+function seleccionarMascotaJugador (){
+
+    let spanMascotaJugador = document.getElementById("mascota-jugador");
+    
+    
+
+    if(document.getElementById("charizar").checked) {
+        spanMascotaJugador.innerHTML ="Charizar";
+    }else if (document.getElementById("squirtle").checked) {
+        spanMascotaJugador.innerHTML ="Squirtle";
+    }else if (document.getElementById("bulbasaur").checked) {
+        spanMascotaJugador.innerHTML ="Bulbasaur";
+    }else{
+            alert("No seleccionaste una mascota");  
+        }
+
+    seleccionarMascotaEnemigo();
+}
+
+function seleccionarMascotaEnemigo(){
+   let seleAletatorio=aleatorio(3,1) 
+   let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
+
+   if (seleAletatorio == 1) {
+    spanMascotaEnemigo.innerHTML ="Charizar";
+
+} else if (seleAletatorio == 2) {
+    spanMascotaEnemigo.innerHTML ="Squirtle";;
+
+} else if (seleAletatorio == 3) {
+    spanMascotaEnemigo.innerHTML ="Bulbasaur";;
+
+}
+
+}
 
 function aleatorio(max, min) {
+    return Math.floor(Math.random() * (max - min + 1) + 1);
+}
+
+function ataquefuego(){     
+ataqueJugador = "Fuego";
+ataqueEnemigoAleatorio ();
+}
+
+function ataqueagua(){   
+ataqueJugador="Agua";
+ataqueEnemigoAleatorio ();
+
+}
+
+function ataquetierra(){ 
+    ataqueJugador="Tierra";
+    ataqueEnemigoAleatorio ();
+
+}
+
+function ataqueEnemigoAleatorio (){
+    let ataqueAleatorio = aleatorio(3,1);
+
+    if (ataqueAleatorio == 1) {
+        ataqueEnemigo = "Fuego";
+
+        }else if (ataqueAleatorio == 2){
+            ataqueEnemigo = "Agua";
+
+        }else if (ataqueAleatorio == 3 ){
+            ataqueEnemigo = "Tierra"; 
+        }
+
+        creaParrafo()
+    }
+function creaParrafo(){
+    let sectionMensajes = document.getElementById('mensajes')
+   let parrafo = document.createElement("p")
+   parrafo.innerHTML="¡Tu mas mascota realizo un ataque de " + ataqueJugador + "! ..y la mascota enemiga respodio con " + ataqueEnemigo;
+   
+   sectionMensajes.appendChild(parrafo)
+}
+window.addEventListener("load", iniciarJuego);
+
+
+
+
+
+
+/*function aleatorio(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + 1);
 }
 
@@ -83,4 +186,4 @@ while (ganadas < 3 && perdidas < 3) {
         }
     
     alert ("has ganado " + ganadas + " veces y perdido " + perdidas + " veces");
-}
+} */
