@@ -91,7 +91,9 @@ function ataqueEnemigoAleatorio (){
         }
 
         creaParrafo()
-    }
+}
+
+
 function creaParrafo(){
     let sectionMensajes = document.getElementById('mensajes')
    let parrafo = document.createElement("p")
@@ -99,6 +101,8 @@ function creaParrafo(){
    
    sectionMensajes.appendChild(parrafo)
 }
+
+
 window.addEventListener("load", iniciarJuego);
 
 
