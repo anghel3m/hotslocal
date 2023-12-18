@@ -152,7 +152,7 @@ function revisarVidas(){
 function creaParrafo(resultado){
     let sectionMensajes = document.getElementById('mensajes')
    let parrafo = document.createElement("p")
-   parrafo.innerHTML="¡Tu mas mascota realizo un ataque de " + ataqueJugador + "! ..y la mascota enemiga respodio con " + ataqueEnemigo+" - "+resultado;
+   parrafo.innerHTML="¡Tu mascota realizo un ataque de " + ataqueJugador + "! ..y la mascota enemiga respodio con " + ataqueEnemigo+" - "+resultado;
    
    sectionMensajes.appendChild(parrafo)
 }
