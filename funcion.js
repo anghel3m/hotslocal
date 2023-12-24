@@ -89,7 +89,7 @@ ataqueEnemigoAleatorio ();
 }
 
 function ataquetierra(){ 
-    ataqueJugador="un pezoñazo en la cabez";
+    ataqueJugador="un peñonazo en la cabeza";
     ataqueEnemigoAleatorio ();
 
 }
