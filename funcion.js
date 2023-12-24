@@ -42,13 +42,13 @@ function seleccionarMascotaJugador (){
     seccionSeleccionarMascota.style.display="none";
 
     if(document.getElementById("charizar").checked) {
-        spanMascotaJugador.innerHTML ="Charizar";
+        spanMascotaJugador.innerHTML ="El Santi";
     }else if (document.getElementById("squirtle").checked) {
-        spanMascotaJugador.innerHTML ="Squirtle";
+        spanMascotaJugador.innerHTML ="El yesi";
     }else if (document.getElementById("bulbasaur").checked) {
-        spanMascotaJugador.innerHTML ="Bulbasaur";
+        spanMascotaJugador.innerHTML ="El fabi";
     }else{
-            alert("No seleccionaste una mascota");  
+            alert("No seleccionaste un personaje");  
         }
 
     
@@ -61,13 +61,13 @@ function seleccionarMascotaEnemigo(){
    let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
 
    if (seleAletatorio == 1) {
-    spanMascotaEnemigo.innerHTML ="Charizar";
+    spanMascotaEnemigo.innerHTML ="El Santi";
 
 } else if (seleAletatorio == 2) {
-    spanMascotaEnemigo.innerHTML ="Squirtle";;
+    spanMascotaEnemigo.innerHTML ="El yesi";;
 
 } else if (seleAletatorio == 3) {
-    spanMascotaEnemigo.innerHTML ="Bulbasaur";;
+    spanMascotaEnemigo.innerHTML ="El fabi";;
 
 }
 
@@ -78,18 +78,18 @@ function aleatorio(max, min) {
 }
 
 function ataquefuego(){     
-ataqueJugador = "Fuego";
+ataqueJugador = "una puñalada";
 ataqueEnemigoAleatorio ();
 }
 
 function ataqueagua(){   
-ataqueJugador="Agua";
+ataqueJugador="un arma de fuego";
 ataqueEnemigoAleatorio ();
 
 }
 
 function ataquetierra(){ 
-    ataqueJugador="Tierra";
+    ataqueJugador="un pezoñazo en la cabez";
     ataqueEnemigoAleatorio ();
 
 }
@@ -98,13 +98,13 @@ function ataqueEnemigoAleatorio (){
     let ataqueAleatorio = aleatorio(3,1);
 
     if (ataqueAleatorio == 1) {
-        ataqueEnemigo = "Fuego";
+        ataqueEnemigo = "una puñalada";
 
         }else if (ataqueAleatorio == 2){
-            ataqueEnemigo = "Agua";
+            ataqueEnemigo = "un arma de fuego";
 
         }else if (ataqueAleatorio == 3 ){
-            ataqueEnemigo = "Tierra"; 
+            ataqueEnemigo = "un peñonazo en la cabeza"; 
         }
 
         combate();
@@ -117,18 +117,18 @@ let spanvidasEnemigo = document.getElementById("vidas-enemigo");
     if (ataqueJugador == ataqueEnemigo) {
         creaParrafo("Empataron");
 
-    } else if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra") {
+    } else if (ataqueJugador == "una puñalada" && ataqueEnemigo == "un peñonazo en la cabeza") {
         creaParrafo("Ganaste");
         vidasEnemigo--;
         spanvidasEnemigo.innerHTML =vidasEnemigo;
 
-    } else if (ataqueJugador == "Agua" && ataqueEnemigo == "Fuego") {
+    } else if (ataqueJugador == "un arma de fuego" && ataqueEnemigo == "una puñalada") {
         creaParrafo("Ganaste");
         vidasEnemigo--;
         spanvidasEnemigo.innerHTML =vidasEnemigo;
 
 
-    } else if (ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
+    } else if (ataqueJugador == "un peñonazo en la cabeza" && ataqueEnemigo == "un arma de fuego") {
         creaParrafo("Ganaste");
         vidasEnemigo--;
         spanvidasEnemigo.innerHTML =vidasEnemigo;
@@ -152,7 +152,7 @@ function revisarVidas(){
 function creaParrafo(resultado){
     let sectionMensajes = document.getElementById('mensajes')
    let parrafo = document.createElement("p")
-   parrafo.innerHTML="¡Tu mascota realizo un ataque de " + ataqueJugador + "! ..y la mascota enemiga respodio con " + ataqueEnemigo+" - "+resultado;
+   parrafo.innerHTML="¡Tu amigo realizo un ataque de " + ataqueJugador + "! ..y el enemigo respodio con " + ataqueEnemigo+" - "+resultado;
    
    sectionMensajes.appendChild(parrafo)
 }

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
+body {
+    background-color: #40a2bd;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+h1{
+  background-color: #134cde;
+    border: 1px solid #00039e ;
+    border-radius: 50px;
+}
+
+#tarjetas{
+display: flex;
+text-align: center;
+justify-content: center;
+gap: 10px;
+}
+
+
+.caja-tarjeta{
+background-color: #134cde;
+width: 200px;
+height: 150px;
+padding: 10px;
+box-sizing: border-box;
+border-radius: 20px;
+justify-content: center;
+align-items: center;
+
+}
+
+
+.caja-tarjeta img{
+     
+    width: 70px;
+}
+
+.boton{
+    margin: 2em;
+    padding: 10px 20px;
+    background-color: #134cde;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer; 
+    font-family: 'Fredoka One', cursive;
+    
+}
+
+.boton:hover{
+    color:white;
+    outline: 1px solid white ;
+}
+
